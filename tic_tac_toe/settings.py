@@ -70,7 +70,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tic_tac_toe.wsgi.application'
+# WSGI_APPLICATION = 'tic_tac_toe.wsgi.application'
+
+ASGI_APPLICATION = 'tic_tac_toe.asgi.application'
 
 
 # Database
@@ -130,3 +132,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+CHANNEL_LAYERS = {
+    'default': {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    },
+}
